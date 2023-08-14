@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ4</title>
+    <script>
+        function calc() {
+        const menu = prompt("Калькулятор: 1) сложение, 2) вычитание, 3)умножение, 4) деление");
+        const a = +prompt("a");
+        const b = +prompt("b");
+
+        const result = [false, a + b, a - b, a * b, a / b][menu];
+		
+	    return result === false || result === undefined || result === null || result === NaN || result <= 0 || result >= 5 ? 'Wrong operation' : result;
+	
+        };
+        alert(calc());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
