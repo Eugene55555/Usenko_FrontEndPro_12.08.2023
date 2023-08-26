@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ6</title>
+    <script>
+
+        /* 1 task */
+        document.write(`1. `);
+
+        for(let i = 10; i < 20; i++) {
+            document.write(`${i}, `);
+            i === 19 ? document.write(`${++i}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 2 task */
+        document.write(`2. `);
+
+        for(let i = 10; i < 20; i++) {
+            document.write(`${i*i}, `);
+            i === 19 ? document.write(`${++i*i}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 3 task */
+        document.write(`3. `);
+
+        for(let i = 1; i < 10; i++) {
+            document.write(`7 x ${i} = ${7*i}, `);
+            i === 9 ? document.write(`7 x ${++i} = ${7*(i)}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 4 task */
+        document.write(`4. `);
+
+        for(let i = 1, result = 0; i < 15; i++) {
+            document.write(`${i} + `);
+            result += i;
+            i === 14 ? document.write(`${++i} = ${result + i}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 5 task */
+        document.write(`5. `);
+
+        for(let i = 15, result = 1; i < 35; i++) {
+            document.write(`${i} * `);
+            result *= i;
+            i === 34 ? document.write(`${++i} = ${result * i}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 6 task */
+        document.write(`6. `);
+
+        for(let i = 1, result = 0; i < 500; i++) {
+            document.write(`${i} + `);
+            result += i;
+            i === 499 ? document.write(`${++i} = ${(result + i)}/500 = ${(result + i)/500}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 7 task */
+        document.write(`7. `);
+
+        for(let i = 30, result = 0; i < 80; i++) {
+            if (i % 2 === 0) {
+                document.write(`${i} + `);
+                result += i;
+            }
+            if (i === 79) {
+                document.write(`${++i} = ${result + i}`);
+            }
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 8 task */
+        document.write(`8. `);
+
+        for(let i = 100; i < 300; i++) {
+            i % 3 === 0 ? document.write(`${i}, `): false;
+            i === 299 ? document.write(`${++i}`) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 9 task */
+        document.write(`9. `);
+
+        const num = 500;
+        let i = 0;
+        while (i < num) {
+            if (num % i === 0) document.write(`${i}, `);
+            i++;
+            if (num === i) document.write(`${i}`);
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 10 task */
+        document.write(`10. `);
+
+        const number = 500;
+        let a = 0;
+        while (a < number) {
+            if (number % a === 0 && a % 2 === 0) document.write(`${a}, `);
+            a++;
+            if (number === a && a % 2 === 0) document.write(`${a}`);
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 11 task */
+        document.write(`11. `);
+
+        const numb = 500;
+        let b = 0;
+        let sum = 0;
+        while (b < numb) {
+            if (numb % b === 0 && b % 2 === 0) {
+                document.write(`${b} + `);
+                sum += b;
+            }
+            b++;
+            if (numb === b && a % 2 === 0) document.write(`${b} = ${sum + b}`);
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* 12 task */
+        document.write(`12. `);
+ 
+        for (let j = 1; j <=10; j++) {
+            document.write(`<br>`);
+            for (let i = 1; i <=10; i++) {
+                document.write(i + "x" + j + "=" +(i*j) + "<br>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
