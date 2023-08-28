@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ7</title>
+    <script>
+
+        /* task 1 */
+
+        let str = '';
+        for (let i = 20; i <= 30; i += 0.5) {
+            str += i + ' ';
+        }
+        document.write(str.trim());
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* task 2 */
+
+        const costDollar = 27;
+        for (let i = 10; i <= 100; i += 10) {
+            document.write(`${i} dollars to UA = ${i} x ${costDollar} = ${i*costDollar} <br>`);
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* task 3 */
+
+        const n = 9801;
+        for (let i = 1; i <= 100; i++) {
+            Math.pow(i, 2) <= n ? document.write(`${Math.pow(i, 2)} `) : false;
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* task 4 */
+
+        const int = 33643;
+        
+        for (let i = 1; i <= int; i++) {
+            if (int % 2 === 0) {
+                document.write(`composite`);
+                break;
+            } else {
+                document.write(`simple`);
+                break;
+            }
+        }
+
+        document.write(`<br>`);
+        document.write(`<br>`);
+
+        /* task 5 */
+
+        const numb = 729;
+        for (let i = 1; i <= numb; i++) {
+            Math.pow(i, 3) === numb ? document.write(`${Math.pow(i, 3)} `) : false;
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
