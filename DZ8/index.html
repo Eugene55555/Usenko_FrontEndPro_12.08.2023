@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ8</title>
+    <script>
+
+        let count = 5;
+        while (count = prompt('Enter how many values will be in the array', 5)) {
+            if (isNaN(count)) {
+                alert('Please enter a valid value');
+                continue;
+            }
+        break;
+        }
+
+        let arr = [];
+        for (let i = 0; count > i; i++) {
+            arr.push(prompt('Enter a value into an array'));
+        }
+
+        console.log(arr);
+
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+
+        console.log(arr);
+
+        arr.splice(1, 3);
+
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
