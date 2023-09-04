@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ9</title>
+    <script>
+
+        function calculateArr() {
+            let ownArray = ['v', 'b', 'e', 'cc', 'hi', 1, 2, 3, 4, 5, 6, 'end']
+            ,   sum = 0
+            ,   count = 0
+            ,   res = 0;
+
+            for (let i = 0; i < ownArray.length; i++) {
+                if ( !isNaN(ownArray[i]) ) {
+                    count += 1;
+                    sum += ownArray[i];
+                }
+            }
+            return res = sum / count;
+        }
+
+        console.log(calculateArr());
+
+        function doMath(x, znak, y) {
+            if (~znak.search(/[^+\-*/%^]/) || znak.length !== 1) return 'Error';
+            return eval(x + znak.replace('^', '**') + y);
+        }
+
+        const x = prompt('Enter x');
+        const y = prompt('Enter y');
+        const znak = prompt('Enter sign (+, -, *, /, %, ^)');
+        console.log(doMath(x, znak, y));
+
+        const mainN = prompt('Enter the length of the main array');
+        const subN = prompt('Enter the length of internal arrays');
+        const arr = new Array(+mainN).fill(0)
+        .map((_, ind) =>
+        new Array(+subN).fill(0).map((_, i) => prompt(`Enter element ${i} in submassive ${ind}`)));
+        console.log('Your array:' + arr.map(subArr => '\n' + subArr));
+
+        function replace_string(string, pattern) {
+            let st_pt = pattern.join('');
+            return string.replace(new RegExp(`[${st_pt}]`, 'gi'), '')
+        }
+
+        console.log(replace_string('Hello Eugene', ['l', 'e']));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
