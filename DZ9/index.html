@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ9</title>
+    <script>
+
+        let arr = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47]
+        ,result = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                result += arr[i];
+            }
+        }
+        console.log(result);
+
+        let max = Math.max(...arr);
+        let pos = arr.indexOf(max) + 1;
+        // or
+        let posOr = arr.indexOf(max);
+    
+        console.log(max, pos);
+        console.log(max, posOr);
+
+        let min = Math.min(...arr);
+        let position = arr.indexOf(min) + 1;
+        // or
+        let positionOr = arr.indexOf(min);
+    
+        console.log(min, position);
+        console.log(min, positionOr);
+
+        let res = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                res += 1;
+            }
+        }
+        console.log(res);
+
+        let resA = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ( (arr[i] > 0) && (arr[i]%2 !== 0) ) {
+                resA++;
+            }
+        }
+        console.log(resA);
+
+        let resB = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ( (arr[i] > 0) && (arr[i]%2 === 0) ) {
+                resB++;
+            }
+        }
+        console.log(resB);
+
+        let resC = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ( (arr[i] > 0) && (arr[i]%2 === 0) ) {
+                resC += arr[i];
+            }
+        }
+        console.log(resC);
+
+        let resD = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ( (arr[i] > 0) && (arr[i]%2 !== 0) ) {
+                resD += arr[i];
+            }
+        }
+        console.log(resD);
+
+        let resE = 1;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                resE *= arr[i];
+            }
+        }
+        console.log(resE);
+
+        let resF = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== max) {
+                arr[i] = 0;
+            }
+        }
+
+        console.log(max);
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
