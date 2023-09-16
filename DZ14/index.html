@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ14</title>
+    <script>
+
+        class Student {
+            constructor(firstName, lastName, year) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.year = year;
+                this.marks = [];
+                this._presence = new Array(25);
+                this._current = 0;
+                this._numberOfVisits = 0;
+                this._numberOfClasses = 0;
+            }
+
+            get getFullName() {
+                return this.firstName + ' ' + this.lastName;
+            }
+ 
+            get age() {
+                return new Date().getFullYear() - this.year;
+            }
+ 
+            get averageMark() {
+                let count = 0,
+                    sum = this.marks.reduce((a, b) => { ++count; return a + b; }, 0);
+                this._numberOfVisits = count;
+                return count ? sum / count : 0;
+            }
+ 
+            present(mark) {
+                if (this._current === this._presence.length) {
+                    throw new RangeError(`${this.firstName} ${this.lastName} already finished the session.`);
+                }
+                this.marks[this._current] = mark;
+                this._presence[this._current++] = true;
+                this._numberOfClasses++;
+            }
+
+            absent() {
+                if (this._current === this._presence.length) {
+                    throw new RangeError(`${this.firstName} ${this.lastName} already finished the session.`);
+                }
+                this._presence[this._current++] = false;
+                this._numberOfClasses++;
+            }
+
+            summary() {
+                if (this.averageMark > 90 && this._numberOfVisits/this._numberOfClasses > 0.9) {
+                    return console.log(`${this.firstName} ${this.lastName} Well done!`);
+                } else if (this.averageMark > 60 && this._numberOfVisits/this._numberOfClasses > 0.6) {
+                    return console.log(`${this.firstName} ${this.lastName} Good, but it can be better!`);
+                } else {
+                    return console.log(`${this.firstName} ${this.lastName} Radish!`);
+                }
+            }
+        }
+ 
+        let bob = new Student("Bob", "Walton", 1991);
+        console.log(bob.age);
+ 
+        bob.present(90);
+        bob.present(90);
+        bob.absent();
+        bob.absent();
+        bob.present(95);
+        bob.present(85);
+        bob.present(95);
+        bob.summary();
+
+        console.log(bob.averageMark.toFixed(2));
+
+        let piter = new Student("Piter", "Parker", 1993);
+        console.log(piter.age);
+ 
+        piter.present(90);
+        piter.present(90);
+        piter.present(95);
+        piter.present(85);
+        piter.present(95);
+        piter.present(95);
+        piter.present(95);
+        piter.present(95);
+        piter.summary();
+
+ 
+        console.log(piter.averageMark.toFixed(2));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
