@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ15</title>
+    <script>
+
+        class SuperArray extends Array {
+            constructor(...names) {
+                super(...names);
+            }
+
+            sum() {
+                return this.filter((el) => typeof el === 'number').reduce((a, b) => a + b, 0);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
