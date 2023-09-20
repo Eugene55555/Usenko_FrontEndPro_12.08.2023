@@ -15,6 +15,10 @@
                 return this.filter((el) => typeof el === 'number').reduce((a, b) => a + b, 0);
             }
         }
+
+        const num = new SuperArray(1, 4, 5, 9, 1, 2);
+        const result = num.sum();
+        console.log(result);
         
     </script>
 </head>
