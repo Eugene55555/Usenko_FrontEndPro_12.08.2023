@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ16</title>
+    <script>
+
+        const Role = {};
+
+        Object.defineProperties(Role, {
+            Admin: {
+                value: 'admin',
+                writable: false,
+                enumerable: true,
+                configurable: false,
+            },
+            Editor: {
+                value: 'editor',
+                writable: true,
+                enumerable: true,
+                configurable: false,
+            },
+            Reader: {
+                value: 'reader',
+                writable: false,
+                enumerable: true,
+                configurable: false,
+            },
+            SuperAdmin: {
+                value: 'superAdmin',
+                writable: false,
+                enumerable: false,
+                configurable: false,
+            },
+        })
+
+        class User {
+            constructor(id, role) {
+                this.id = id;
+            }
+        }
+
+        const admin = new User(1, Role.Admin);
+        admin.role = 'new value';
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
