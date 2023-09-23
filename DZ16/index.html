@@ -36,13 +36,29 @@
         })
 
         class User {
-            constructor(id, role) {
+            constructor(id, firstName, lastName, role) {
                 this.id = id;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                Object.defineProperty(this, 'role', {
+                    value: role,
+                    writable: false,
+                    enumerable: true,
+                    configurable: false,
+                });
             }
         }
 
-        const admin = new User(1, Role.Admin);
-        admin.role = 'new value';
+        delete Role.Reader; // doesn't work
+        console.log(Role.Admin); // 'admin';
+        Role.Admin = 'hello'; // doesn't change this property
+        Role.newProp = 'value'; // doesn't change Role object
+
+        const editor = new User(1, 'John', 'Doe', Role.Admin);
+        console.log(editor.role); // 'admin';
+        console.log(editor.role === Role.Admin); // true;
+        editor.role = false; // doesn't do anything
+        delete editor.role; // doesn't do anything
         
     </script>
 </head>
