@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ19</title>
+    <script>
+        function myTimer () {
+            var d = ':';
+            var p = 60;
+            var z = function (x) {return (((x < 10) ? '0' : '') + x)};
+            var sb = document.getElementById('time');
+            var H = sb.innerHTML.split(d);
+         
+            var t = parseInt (H[0]) * p * p + parseInt (H[1]) * p + parseInt (H[2]) + 1;
+            sb.innerHTML = [z (Math.floor (t / p / p)),
+                            z (Math.floor (t % (p * p) / p)),
+                            z (t % (p* p) % p)].join (d);
+            sb.wrk = setTimeout (myTimer, 1000);
+        }
+         
+        onload = function () {
+            document.getElementById('buttonClick').onclick = function () {
+                var sb = document.getElementById('time');
+                if (!sb.wrk) {
+                    sb.innerHTML = '00:00:00';
+                    sb.wrk = setTimeout(myTimer, 1000);
+                }
+                else {
+                    clearTimeout (sb.wrk);
+                    sb.innerHTML = '00:00:00';
+                    sb.wrk = 0;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="stopwatch">
+        <h4 id="time">00:00:00</h4>
+    </div>
+    <button id="buttonClick">START</button>
+</body>
+</html>
