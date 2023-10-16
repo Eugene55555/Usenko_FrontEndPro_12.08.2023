@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ22</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h2>Реєстрація</h2>
+    <form id="registration-form">
+        <label for="first-name">Ім'я:</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Прізвище:</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="birth-date">Дата народження:</label>
+        <input type="text" id="birth-date" name="birth-date" required>
+
+        <label>Стать:</label>
+        <input type="radio" id="male" name="gender" value="Чоловік">
+        <label for="male">Чоловік</label>
+        <input type="radio" id="female" name="gender" value="Жінка">
+        <label for="female">Жінка</label>
+
+        <label for="city">Місто:</label>
+        <select id="city" name="city">
+            <option value="Київ">Київ</option>
+            <option value="Львів">Львів</option>
+            <option value="Харків">Харків</option>
+        </select>
+
+        <label for="address">Адреса:</label>
+        <textarea id="address" name="address"></textarea>
+
+        <label>Мови, якими володієте:</label>
+        <input type="checkbox" id="english" name="languages" value="Англійська">
+        <label for="english">Англійська</label>
+        <input type="checkbox" id="spanish" name="languages" value="Іспанська">
+        <label for="spanish">Іспанська</label>
+        <!-- Добавьте другие языки по аналогии -->
+
+        <button type="button" id="save-button">Зберегти</button>
+    </form>
+
+    <div id="output-table"></div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
