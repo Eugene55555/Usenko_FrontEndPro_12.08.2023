@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ29</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadTasks();
+        });
+
+        function loadTasks() {
+            const todoList = document.getElementById('todo-list');
+            todoList.innerHTML = ''; // Clear existing list
+
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+            tasks.forEach(task => {
+                const li = document.createElement('li');
+                li.textContent = task.text;
+                li.className = task.completed ? 'completed' : '';
+                li.onclick = toggleTask;
+
+                todoList.appendChild(li);
+            });
+        }
+
+        function addTask() {
+            const taskInput = document.getElementById('task-input');
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') return;
+
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            const newTask = { text: taskText, completed: false };
+            tasks.push(newTask);
+
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            taskInput.value = ''; // Clear input field
+            loadTasks();
+        }
+
+        function toggleTask() {
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            const index = Array.from(this.parentNode.children).indexOf(this);
+
+            tasks[index].completed = !tasks[index].completed;
+
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            loadTasks();
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <h1>ToDo List</h1>
+        <ul id="todo-list"></ul>
+        <form id="todo-form">
+            <input type="text" id="task-input" placeholder="Enter your task">
+            <button type="button" onclick="addTask()">Add Task</button>
+        </form>
+    </div>
+</body>
+</html>
