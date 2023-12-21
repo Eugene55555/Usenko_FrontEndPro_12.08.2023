@@ -7,7 +7,6 @@ const App = () => {
   const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
-    // Отримання даних з API
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((data) => {
