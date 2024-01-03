@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ5</title>
+    <script>
+
+        const yearOfBirth = prompt("Введіть свій рік народження:");
+        const city = prompt("Введіть місто, де ви живете:");
+        const favoriteSport = prompt("Введіть свій улюблений вид спорту:");
+
+        if (yearOfBirth === null || city === null || favoriteSport === null) {
+            alert("Шкода, що ви не захотіли ввести свої дані.");
+        } else {
+            let currentYear = new Date().getFullYear();
+            const age = currentYear - parseInt(yearOfBirth);
+            const cityMessage = (city === "Київ" || city === "Вашингтон" || city === "Лондон") ?
+                "Ти живеш у столиці " + getCountryCapital(city) + "!" :
+                "Ти живеш у місті " + city + "!";
+
+            alert("Твій вік: " + age + " років\n" + cityMessage);
+
+            var sportsChampions = {
+                "футбол": "Ліонель Мессі",
+                "баскетбол": "Леброн Джеймс",
+                "теніс": "Серена Вільямс"
+            };
+
+            if (sportsChampions[favoriteSport.toLowerCase()]) {
+                var championName = sportsChampions[favoriteSport.toLowerCase()];
+                alert("Круто! Хочеш стати як " + championName + "?");
+            }
+        }
+
+        function getCountryCapital(capital) {
+            switch (capital) {
+                case "Київ":
+                    return "України";
+                case "Вашингтон":
+                    return "США";
+                case "Лондон":
+                    return "Великобританії";
+                default:
+                    return "невідомої країни";
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
